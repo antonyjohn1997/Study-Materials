@@ -1,0 +1,112 @@
+what is node?
+
+server side javascript .javascript that we want to run inthe browser  , we can run it over server side. nodejs brings the javascript abilities to the server side .so we can write backend services in javascript as well as front end .it is cross platform means we can run same code on mac or linux ...nodejs have all of benefits of javascript .nodejs can run on the server side for my APIs or devices or wherever i want to do it . nodejs is open source ,
+
+what is express ?
+
+express is web dev framework . To serve webpages or serve APIs or to receive request , those types of things , are all baked into Express.it is unopinioted and minimalistic . its allow us to take request and send back response , which makes it ideal for super lightweight , little backend APIs that we want to spin up to serve our front end servers .
+
+nvm ?
+
+there is a tool we can use that will let us kind of move back and forth between Node versions pretty easily . nvm is node version manager .
+
+install nodejs
+
+check in terminal :node
+
+check in terminal :.exit
+
+check in terminal :node --version 
+
+install nvm
+
+check in terminal :nvm version
+check in terminal :nvm
+check in terminal :nvm install node
+check in terminal :nvm install versionnumber
+check in terminal :nvm install --lts
+
+npm ?
+
+node package manager .manage all packages tha come with a Node.js application .
+
+
+
+install vscode
+
+write vscode terminal : npm init 
+
+we can see the results then press enter ,enter,
+then automatically created a file package.json .Then 
+write vscode terminal : npm install express
+
+sometimes we face below problem :
+npm : File C:\Program Files\nodejs\npm.ps1 cannot be loaded because running scripts is disabled on this system. For more information, see about_Execution_Policies at https:/go.microsoft.com/fwlink/?LinkID=135170.
+
+solution link:
+https://www.c-sharpcorner.com/article/how-to-fix-ps1-can-not-be-loaded-because-running-scripts-is-disabled-on-this-sys/
+
+
+write vscode terminal : npm install express@4.16
+write vscode terminal : npm install express@4.17
+
+
+FIrst Page 
+
+1.setting up express 
+
+
+package.json 
+
+  {
+  "name": "hp",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "4.17"
+  }
+}
+
+above that code we have got in our library directory .then create a new file app.js
+
+2.running express
+
+
+const express = require('express');
+
+const app = express();
+
+app.get('/', (req, res) => {
+    res.send('Hello from my app');
+});
+
+app.listen(3000, () => {
+    console.log('listening on port 3000');
+});
+
+
+require instead of import . think about get as you have got a browser , and you send a get request to slash . and when Express gets a get request to slash , its going to execute for us this function .its just a serious of , hey , when you get a request , do this route. I n this verb , execute this function .
+
+in vscode terminal run app.js :node app.js 
+ we can see " listening on port 3000 .in google chrome type localhost 3000 .then we can see "Hello from my app ".
+
+3. Debugging options
+
+
+write vscode terminal : npm install chalk
+add, const chalk = require('chalk');  in app.js
+
+write vscode terminal : node app.js
+we can see  " listening on port 3000 " . we can add colour to port 3000 by replacing console.log('listening on port 3000'); to console.log('listening on port ' + chalk.green('3000'));. then 
+write vscode terminal : node app.js
+we can see " listening on port 3000 .3000 is in green colour .
+
+
+
+
